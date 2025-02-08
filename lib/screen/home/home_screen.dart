@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:yohire_ui/home/widgets/appbar_widget.dart';
-import 'package:yohire_ui/home/widgets/heading_widget.dart';
-import 'package:yohire_ui/home/widgets/job_card_one.dart';
-import 'package:yohire_ui/home/widgets/job_card_two.dart';
+import 'package:yohire_ui/screen/home/widgets/appbar_widget.dart';
+import 'package:yohire_ui/screen/home/widgets/heading_widget.dart';
+import 'package:yohire_ui/screen/home/widgets/job_card_one.dart';
+import 'package:yohire_ui/screen/home/widgets/job_card_two.dart';
+import 'package:yohire_ui/utils/screen_responsive.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       body: Center(
         child: Column(
@@ -19,9 +17,10 @@ class HomeScreen extends StatelessWidget {
             // This section stays fixed and doesn't scroll
             Padding(
               padding: EdgeInsets.only(
-                  left: screenWidth * .038, right: screenWidth * .038),
-              child: Container(
-                height: screenHeight * 0.5,
+                  left: ScreenUtil.width * .038,
+                  right: ScreenUtil.width * .038),
+              child: SizedBox(
+                height: ScreenUtil.height * 0.5,
                 // color: Colors.green,
                 child: Column(children: [
                   AppbarWidget(),
@@ -29,11 +28,11 @@ class HomeScreen extends StatelessWidget {
                     title: 'On Trending',
                   ),
                   SizedBox(
-                    height: screenHeight * .012,
+                    height: ScreenUtil.height * .012,
                   ),
                   JobCardOne(),
                   SizedBox(
-                    height: screenHeight * .012,
+                    height: ScreenUtil.height * .012,
                   ),
                   HeadingWidget(
                     title: 'Recommendations',
@@ -60,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                           qualification3:
                               'Candidates experience in the following reputed companies,\n voltas ,Blue star ,Sterling Wilson ,L&T ,Tata projects ,\n Consolidated contractors company etc.'),
                       SizedBox(
-                        height: screenHeight * .012,
+                        height: ScreenUtil.height * .012,
                       ),
                       JobCardTwo(
                           title: 'Sales Officer Female',
@@ -72,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                           qualification3:
                               'Must have excellent convincing communication skill and \npassion for sales /'),
                       SizedBox(
-                        height: screenHeight * .012,
+                        height: ScreenUtil.height * .012,
                       ),
                       JobCardTwo(
                           title: 'Sales Officer Male',
@@ -83,6 +82,19 @@ class HomeScreen extends StatelessWidget {
                           qualification2: 'Age 20-35 /',
                           qualification3:
                               'Must have excellent convincing communication skill and \npassion for sales /'),
+                      SizedBox(
+                        height: ScreenUtil.height * .012,
+                      ),
+                      JobCardTwo(
+                          title: 'Generator Technician',
+                          place: 'Saudi Arabia',
+                          salaryRange: 'Salary Est : 2064-3000 SAR',
+                          qualification1:
+                              'Free accommodation and transportation',
+                          qualification2:
+                              '8 Hours duty / week off/ 2 years contract',
+                          qualification3:
+                              'Interview @ Cochin on 2nd Week of February 2025'),
                     ],
                   ),
                 ),

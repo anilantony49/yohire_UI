@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yohire_ui/home/home_screen.dart';
+import 'package:yohire_ui/screen/home/home_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});

@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:yohire_ui/utils/screen_responsive.dart';
 
 class AppbarWidget extends StatelessWidget {
   const AppbarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
-    return Container(
-      // color: Colors.amber,
-      height: screenHeight * .102,
+    return SizedBox(
+      height: ScreenUtil.height * .102,
       child: Padding(
-        padding: EdgeInsets.only(top: screenHeight * .051),
+        padding: EdgeInsets.only(top: ScreenUtil.height * .051),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -27,10 +25,7 @@ class AppbarWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                onPressed: () {
-                  // print("Device Screen Height: $screenHeight pixels");
-                  // print("Device Screen Height: $screenWidth pixels");
-                },
+                onPressed: () {},
                 child: Text(
                   'Login/register',
                   style: TextStyle(color: Colors.white),

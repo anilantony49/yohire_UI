@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yohire_ui/home/home_screen.dart';
 
 class SearchAppbar extends StatelessWidget implements PreferredSizeWidget {
   const SearchAppbar({super.key});
@@ -12,10 +11,7 @@ class SearchAppbar extends StatelessWidget implements PreferredSizeWidget {
         padding: const EdgeInsets.only(left: 20),
         child: GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
-            );
+            Navigator.pop(context);
           },
           child: Icon(Icons.arrow_circle_left_rounded),
         ),
@@ -48,5 +44,5 @@ class SearchAppbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(70.0);  // Set preferred height here
+  Size get preferredSize => Size.fromHeight(70.0); // Set preferred height here
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yohire_ui/home/job_card_one_show_all_screen.dart';
+import 'package:yohire_ui/screen/home/job_card_one_show_all_screen.dart';
+import 'package:yohire_ui/utils/screen_responsive.dart';
 
 class HeadingWidget extends StatelessWidget {
   final String title;
@@ -7,11 +8,8 @@ class HeadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: screenHeight * .038,
-      // color: Colors.red,
+      height: ScreenUtil.height * .038,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

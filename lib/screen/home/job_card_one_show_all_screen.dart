@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yohire_ui/home/widgets/job_card_three.dart';
-import 'package:yohire_ui/home/widgets/search_appbar.dart';
+import 'package:yohire_ui/screen/home/widgets/job_card_three.dart';
+import 'package:yohire_ui/screen/home/widgets/search_appbar.dart';
 
 class JobCardOneShowAllScreen extends StatelessWidget {
   const JobCardOneShowAllScreen({super.key});
