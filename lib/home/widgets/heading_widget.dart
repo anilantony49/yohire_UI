@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yohire_ui/home/job_card_one_show_all_screen.dart';
 
 class HeadingWidget extends StatelessWidget {
   final String title;
@@ -6,7 +7,7 @@ class HeadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    // final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Container(
       height: screenHeight * .038,
@@ -18,9 +19,18 @@ class HeadingWidget extends StatelessWidget {
             title,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          Text(
-            'Show All',
-            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => JobCardOneShowAllScreen()),
+              );
+            },
+            child: Text(
+              'Show All',
+              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+            ),
           )
         ],
       ),

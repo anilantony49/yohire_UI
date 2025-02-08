@@ -42,7 +42,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             // This section is the scrollable one for JobCardTwo
-            Expanded( // Ensures this part takes the remaining space
+            Expanded(
+              // Ensures this part takes the remaining space
               child: SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 6, right: 6),
@@ -74,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                         height: screenHeight * .012,
                       ),
                       JobCardTwo(
-                          title: 'Sales Officer Female',
+                          title: 'Sales Officer Male',
                           place: 'Dubai, Dubai, United Arab Emirates',
                           salaryRange: 'Salary Est : 2000-3000+INCENTIVES AED',
                           qualification1:

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yohire_ui/bottom_navigation.dart';
-import 'package:yohire_ui/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
