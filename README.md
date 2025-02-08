@@ -1,6 +1,6 @@
 # yohire_ui
 
-A new Flutter project.
+![Image](https://github.com/user-attachments/assets/f8c9f8ee-e8a8-4dc8-9a12-f7f6f70357b3)
 
 ## Getting Started
 
