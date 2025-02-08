@@ -1,10 +1,12 @@
 # yohire_ui
 
+![Image](https://github.com/user-attachments/assets/f8c9f8ee-e8a8-4dc8-9a12-f7f6f70357b3)
+
 ![Image](https://github.com/user-attachments/assets/83526950-512d-4406-842e-4053e7b4e643)
 
 ![Image](https://github.com/user-attachments/assets/2bfdef47-c8ec-4f9b-be9a-2d14a1bd8b2c)
 
-![Image](https://github.com/user-attachments/assets/f8c9f8ee-e8a8-4dc8-9a12-f7f6f70357b3)
+
 
 ## Getting Started
 
