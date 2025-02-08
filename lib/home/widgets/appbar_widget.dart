@@ -5,10 +5,10 @@ class AppbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    // final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      color: Colors.amber,
+      // color: Colors.amber,
       height: screenHeight * .102,
       child: Padding(
         padding: EdgeInsets.only(top: screenHeight * .051),
@@ -28,8 +28,8 @@ class AppbarWidget extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  print("Device Screen Height: $screenHeight pixels");
-                  print("Device Screen Height: $screenWidth pixels");
+                  // print("Device Screen Height: $screenHeight pixels");
+                  // print("Device Screen Height: $screenWidth pixels");
                 },
                 child: Text(
                   'Login/register',

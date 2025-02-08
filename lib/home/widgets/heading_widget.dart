@@ -9,15 +9,15 @@ class HeadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    return Container(
+    return SizedBox(
       height: screenHeight * .038,
-      color: Colors.red,
+      // color: Colors.red,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
           ),
           TextButton(
             onPressed: () {
@@ -29,7 +29,10 @@ class HeadingWidget extends StatelessWidget {
             },
             child: Text(
               'Show All',
-              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Color.fromARGB(255, 4, 85, 152), // Moved inside `color`
+                fontWeight: FontWeight.bold,
+              ),
             ),
           )
         ],

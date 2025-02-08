@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class JobCardThree extends StatelessWidget {
+class JobCardThree extends StatefulWidget {
   final String companyName;
   final String place;
   final int hours;
@@ -17,6 +17,36 @@ class JobCardThree extends StatelessWidget {
     required this.jobLocation,
     this.showNoDegreeMentioned = false, // Default: false
   });
+
+  @override
+  State<JobCardThree> createState() => _JobCardThreeState();
+}
+
+class _JobCardThreeState extends State<JobCardThree>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000), // Animation duration
+    );
+
+    _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
+    );
+
+    _controller.forward(); // Start the animation
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +94,12 @@ class JobCardThree extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        companyName,
+                        widget.companyName,
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 15),
                       ),
                       Text(
-                        place,
+                        widget.place,
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 10),
                       ),
@@ -89,7 +119,7 @@ class JobCardThree extends StatelessWidget {
                 children: [
                   Icon(Icons.history, size: 10),
                   Text(
-                    'Posted $hours hours ago',
+                    'Posted ${widget.hours} hours ago',
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
                   ),
                 ],
@@ -103,11 +133,11 @@ class JobCardThree extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    widget.title,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   Text(
-                    jobLocation,
+                    widget.jobLocation,
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
                   ),
                 ],
@@ -117,29 +147,11 @@ class JobCardThree extends StatelessWidget {
             // Tags Row
             Row(
               children: [
-                Container(
-                  constraints:
-                      BoxConstraints(minWidth: 70, maxWidth: double.infinity),
-                  decoration: BoxDecoration(
-                    color: Colors.greenAccent,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  height: screenHeight * .038,
-                  child: Center(
-                    child: Text(
-                      'Full-Time',
-                      style: TextStyle(fontSize: 10),
-                    ),
-                  ),
-                ),
-                SizedBox(width: screenWidth * .025),
-
-                // Conditionally show "No Degree Mentioned"
-                if (showNoDegreeMentioned)
-                  Container(
-                    constraints: BoxConstraints(
-                        minWidth: screenWidth * .331,
-                        maxWidth: double.infinity),
+                FadeTransition(
+                  opacity: _fadeAnimation,
+                  child: Container(
+                    constraints:
+                        BoxConstraints(minWidth: 70, maxWidth: double.infinity),
                     decoration: BoxDecoration(
                       color: Colors.greenAccent,
                       borderRadius: BorderRadius.circular(5),
@@ -147,8 +159,32 @@ class JobCardThree extends StatelessWidget {
                     height: screenHeight * .038,
                     child: Center(
                       child: Text(
-                        'No Degree mentioned',
+                        'Full-Time',
                         style: TextStyle(fontSize: 10),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: screenWidth * .025),
+
+                // Conditionally show "No Degree Mentioned"
+                if (widget.showNoDegreeMentioned)
+                  FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: Container(
+                      constraints: BoxConstraints(
+                          minWidth: screenWidth * .331,
+                          maxWidth: double.infinity),
+                      decoration: BoxDecoration(
+                        color: Colors.greenAccent,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      height: screenHeight * .038,
+                      child: Center(
+                        child: Text(
+                          'No Degree mentioned',
+                          style: TextStyle(fontSize: 10),
+                        ),
                       ),
                     ),
                   ),

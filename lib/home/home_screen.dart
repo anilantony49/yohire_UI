@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                   left: screenWidth * .038, right: screenWidth * .038),
               child: Container(
                 height: screenHeight * 0.5,
-                color: Colors.green,
+                // color: Colors.green,
                 child: Column(children: [
                   AppbarWidget(),
                   HeadingWidget(
